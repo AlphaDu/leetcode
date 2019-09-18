@@ -27,6 +27,6 @@ function getCombination(numsStr) {
 
   let groups = numsStr.split('').map(num => mapping[num].split(''))
   track([], groups)
-  console.log(result)
+  return result
 }
 getCombination('23')
