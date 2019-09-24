@@ -18,7 +18,7 @@ var lengthOfLongestSubstring = function(s) {
 
         let index = substring.indexOf(newElement)
 
-        while (index < substring.length - 1) {
+        while (index < substring.length - 1) { // exist repeating
             startIndex = startIndex + index + 1
             substring = s.slice(startIndex, endIndex)
             index = substring.indexOf(newElement)
