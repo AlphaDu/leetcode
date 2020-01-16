@@ -23,7 +23,7 @@ const useCache = (func) => {
         if (cache[key]) {
             return cache[key]
         } else {
-
+            console.log('notgot!!', ...args)
             const result = func(...args)
 
             cache[key] = result
@@ -39,7 +39,7 @@ Y = function(f) {
     )
 }
 
-const rec = Y => f => x  => (Y(f))(x)
+const rec = Y => f => x  => f(Y(f))(x)
 const yfib = f => n => {
     if (n == 1 || n == 2) return 1;
     count ++
