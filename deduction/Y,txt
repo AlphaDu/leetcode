@@ -1,0 +1,5 @@
+Y =  λf·(λx·f (x x)) (λx·f (x x))
+= λf·(λx·f (x x)) (λz·f (z z))
+= (λx·(λz·f (z z)) (x x))
+y func arg =
+(λf·(λx·f (x x)) (λz·f (z z))
