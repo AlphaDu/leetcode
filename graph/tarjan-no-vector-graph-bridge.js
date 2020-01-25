@@ -54,7 +54,7 @@ const { nodeRefs } = createDistinctValueGraph(
 let visited = []
 const visit = node => visited = Array.from(new Set(visited.concat(node)))
 const isVisited = node => visited.some(v => v === node)
-const traveseNode = (node) => {
+const traverseNode = (node) => {
   let minTraceValue = node.value
   if (isVisited(node)) {
     return node.value
@@ -68,7 +68,7 @@ const traveseNode = (node) => {
     visited.every(visitNode => visitNode.value !== next.value)
   )
 
-  const childrenTraceValues = traverseTarget.map(nextNode =>  traveseNode(nextNode))
+  const childrenTraceValues = traverseTarget.map(nextNode =>  traverseNode(nextNode))
 
   minTraceValue = Math.min(
     minTraceValue,
@@ -87,4 +87,4 @@ const traveseNode = (node) => {
   console.log('traceValue:' + minTraceValue + ' of ' + node.value)
   return minTraceValue
 }
-traveseNode(nodeRefs[1])
+traverseNode(nodeRefs[1])
