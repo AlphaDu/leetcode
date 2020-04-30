@@ -13,9 +13,14 @@ function maxProfit(prices) {
   const doTradeForMax = (dayIndex, status, remainCount) => {
     const dayProfit = prices[dayIndex]
     if (status === tradeStatus.hasStock) {
-      return Math.max(
-        doTradeForMax(prices.length - 1, tradeStatus.hasStock, remainCount) + dayProfit
-      )
+      if (remainCount === 0) {
+        doTradeIndayIndex(prices.length - 1, tradeStatus.hasStock, remainCount + 1),
+      } else {
+        return Math.max(
+          doTradeIndayIndex(prices.length - 1, tradeStatus.hasStock, remainCount),
+          doTradeForMax(prices.length - 1, tradeStatus.hasStock, remainCount + 1) + dayProfit
+        )
+      }
     } else {
       if (remainCount === 0) {
         return Math.max(

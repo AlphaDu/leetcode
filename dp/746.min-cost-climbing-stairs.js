@@ -30,7 +30,7 @@ const createMemoContext = () => {
 const useCache = createMemoContext()
 
 var minCostClimbingStairs = function(costArr) {
-    useCache.flush()
+
     const getCostByStep = costToStep(costArr)
     const getMinCost = (stepIndex) => {
         if (stepIndex < 0) {
