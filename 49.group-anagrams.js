@@ -77,7 +77,6 @@ var groupAnagrams = function (strs) {
       hmap[hashKey] = [sorts]
     }
   })
-  console.log(Object.values(hmap))
   return Object.values(hmap).map(sorts => {
     sorts.sort(sortArr)
     return sorts.map(sort => sort.map(toChar).join(''))
